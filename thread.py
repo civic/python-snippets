@@ -1,21 +1,24 @@
 import threading
 import time
 
-
+n = 0
+lock = threading.Lock()
 
 def worker():
-    for n in range(10):
-        print("{}: {}".format(threading.current_thread().name, n))
-        time.sleep(0.5)
+    global n
+    for _ in range(100000):
+        lock.acquire()
+        n += 1
+        lock.release()
 
 
 th1 = threading.Thread(target=worker, name="a")
 th2 = threading.Thread(target=worker, name="b")
 
 th1.start()
-time.sleep(0.1)
 th2.start()
 
 th1.join()
 th2.join()
 
+print(n)
