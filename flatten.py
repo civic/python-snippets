@@ -16,4 +16,3 @@ for n in flat2:
     print(n)
 
 
-
