@@ -18,6 +18,15 @@ a.append("hello")
 a.append(1) # ! Argument 1 to "append" of "list" has incompatible type "int"; expected "str"
 
 
+from typing import TypeVar, Sequence
+
+T = TypeVar('T')
+def firstElement(l: Sequence[T]) -> T:
+    return l[0]
+
+firstElement([1, 2, 3])+" " # Unsupported operand types for + ("int" and "str")
+
+
 from typing import TypeVar, Generic
 
 T = TypeVar('T')
