@@ -30,7 +30,7 @@ print(res.css('li::text').extract())
 # 最初の要素をextract
 print("#最初の要素取得")
 print(res.xpath('//li/text()').extract_first())     # extract_first
-print(res.xpath('//li/text()')[0].extract())     # selectorの1要素からextract
+print(res.xpath('//li/text()')[0].extract())     # selectorの1要素目からextract
 
 print(res.css('li::text').extract_first())
 print(res.css('li::text')[0].extract())
@@ -73,6 +73,5 @@ for elm in res.css("li"):
     data = elm.css('::attr(data)').get()
     text = elm.css('::text').get()
     print("{}\t{}".format(data, text))
-
 
 
