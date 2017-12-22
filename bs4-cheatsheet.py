@@ -24,7 +24,7 @@ def select():
         </body>
     </html>''', 'html.parser')
 
-    # find_allは全検索してリストで返す
+    # タグ全検索してリストで返す
     li_elements = soup.select("li")
     print(li_elements)  # [<li><a class="first" href="http://example.com/">example.com</a></li>,
                         #  <li><a href="http://www.google.com/">google.com</a></li>]
@@ -57,7 +57,7 @@ def navigation():
         <body>
             <ul>
                 <li><a href="http://example.com/" class="first">example.com</a></li>
-                <li><a href="http://www.google.com/">google.com</a></li>
+                <li><a href="http://www.google.com/" data="123">google.com</a></li>
             </ul>
         </body>
     </html>''', 'html.parser')
