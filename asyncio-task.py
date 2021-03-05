@@ -4,8 +4,8 @@ import time
 
 def async_main():
     async def say_after(delay, what):
-        await asyncio.sleep(delay)
-        # time.sleep(delay)
+        # await asyncio.sleep(delay)
+        time.sleep(delay)
         print(f"{time.strftime('%X')} - {what}")
 
     async def main():
