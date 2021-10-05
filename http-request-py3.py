@@ -18,22 +18,39 @@ def http_post():
     html = response.read()
     print(html.decode('utf-8'))
 
+
 def http_get_requests():
     import requests
-    
+
     response = requests.get('http://www.example.com')
     print(response.status_code)
     print(response.text)
 
+
+def http_get_requests_json():
+    import requests
+    response = requests.get("https://httpbin.org/get")
+    print(response.json())
+
+
 def http_post_requests():
     import requests
-    
+
     response = requests.post('http://www.example.com', data={'foo': 'bar'})
     print(response.status_code)
     print(response.text)
 
 
-http_get()
-http_post()
-http_get_requests()
-http_post_requests()
+def http_post_requests_json():
+    import requests
+
+    response = requests.post('https://httpbin.org/post', json={'foo': 'bar'})
+    print(response.status_code)
+    print(response.text)
+
+
+# http_get()
+# http_post()
+# http_get_requests_json()
+# http_post_requests()
+http_post_requests_json()
